@@ -1,24 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&family=Montserrat:wght@100;200;400;600&display=swap');
-
-$accent-green: rgba(114, 215, 190, 0.5);
-$accent-purple: #C7CEEE;
-$text-dark: #444444;
-
-@mixin font($fontFamily, $fontSize, $fontWight, $fontColor) {
-	font-family: $fontFamily;
-	font-size: $fontSize;
-	font-weight: $fontWight;
-	color: $fontColor;
-}
-
-@mixin flex($justifyContent, $alignItems, $flexDirection) {
-	display: flex;
-	justify-content: $justifyContent;
-	align-items: $alignItems;
-	flex-direction: $flexDirection;
-}
-
-// ==============================================
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&family=Montserrat:wght@100;200;400;600&display=swap';
+@import './variables.scss';
 
 * {
 	box-sizing: border-box;
@@ -32,9 +13,15 @@ html {
 	color: $text-dark;
 }
 
+.container {
+	margin: 0 auto;
+	height: 100px;
+	border: 1px solid red;
+}
+
 header {
 	width: 100vw;
-	height: 100px;
+	height: 10vh;
 	background-color: $accent-purple;
 	@include flex(center, center, '');
 
@@ -48,7 +35,6 @@ header {
 		&::after {
 			content: 'what\'s the weather now?';
 			display: block;
-			width: 100%;
 			position: absolute;
 			bottom: 0;
 			left: 20%;

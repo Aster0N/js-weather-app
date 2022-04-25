@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&family=Montserrat:wght@100;200;400;600&display=swap");
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&family=Montserrat:wght@100;200;400;600&display=swap';
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,9 +11,15 @@ html {
   color: #444444;
 }
 
+.container {
+  margin: 0 auto;
+  height: 100px;
+  border: 1px solid red;
+}
+
 header {
   width: 100vw;
-  height: 100px;
+  height: 10vh;
   background-color: #C7CEEE;
   display: flex;
   justify-content: center;
@@ -36,7 +42,6 @@ header .title {
 header .title::after {
   content: "what's the weather now?";
   display: block;
-  width: 100%;
   position: absolute;
   bottom: 0;
   left: 20%;

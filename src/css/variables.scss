@@ -1,0 +1,17 @@
+$accent-green: rgba(114, 215, 190, 0.5);
+$accent-purple: #C7CEEE;
+$text-dark: #444444;
+
+@mixin font($fontFamily, $fontSize, $fontWight, $fontColor) {
+	font-family: $fontFamily;
+	font-size: $fontSize;
+	font-weight: $fontWight;
+	color: $fontColor;
+}
+
+@mixin flex($justifyContent, $alignItems, $flexDirection) {
+	display: flex;
+	justify-content: $justifyContent;
+	align-items: $alignItems;
+	flex-direction: $flexDirection;
+}
