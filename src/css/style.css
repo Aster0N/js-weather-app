@@ -1,1 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&family=Montserrat:wght@100;200;400;600&display=swap");/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&family=Montserrat:wght@100;200;400;600&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  font-family: "Inter", "sans-serif";
+  color: #444444;
+}
+
+header {
+  width: 100vw;
+  height: 100px;
+  background-color: #C7CEEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: "";
+}
+header .title {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: "Montserrat";
+  font-size: 35px;
+  font-weight: 250;
+  color: rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+}
+header .title::after {
+  content: "what's the weather now?";
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: 600;
+  color: #444444;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}/*# sourceMappingURL=style.css.map */

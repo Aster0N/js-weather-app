@@ -17,3 +17,44 @@ $text-dark: #444444;
 	align-items: $alignItems;
 	flex-direction: $flexDirection;
 }
+
+// ==============================================
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body,
+html {
+	font-family: 'Inter', 'sans-serif';
+	color: $text-dark;
+}
+
+header {
+	width: 100vw;
+	height: 100px;
+	background-color: $accent-purple;
+	@include flex(center, center, '');
+
+	.title {
+		user-select: none;
+		@include font('Montserrat', 35px, 250, rgba(0, 0, 0, 0.1));
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		position: relative;
+
+		&::after {
+			content: 'what\'s the weather now?';
+			display: block;
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			left: 20%;
+			@include font('Montserrat', 20px, 600, $text-dark);
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+	}
+}
