@@ -21,19 +21,26 @@
   header .title {
     font-size: 30px;
   }
+
+  .preview {
+    width: 700px;
+  }
 }
 @media screen and (max-width: 768px) {
-  .container {
+  .container,
+.preview {
     width: 540px;
   }
 }
 @media screen and (max-width: 576px) {
-  .container {
+  .container,
+.preview {
     width: 540px;
   }
 }
 @media screen and (max-width: 540px) {
-  .container {
+  .container,
+.preview {
     padding: 10px;
     width: 100%;
   }
