@@ -118,10 +118,7 @@
 	}
 
 	header .title {
-		font-family: 'Montserrat', 'sans-serif';
-		font-size: 18px;
-		font-weight: 600;
-		color: $text-dark;
+		@include font('Montserrat', 18px, 600, $text-dark);
 
 		&::after {
 			display: none;
