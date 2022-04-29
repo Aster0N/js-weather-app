@@ -2,15 +2,32 @@
   .container {
     width: 1320px;
   }
+
+  .preview-content {
+    padding: 60px;
+  }
+
+  .preview-illustration img {
+    width: 300px;
+    height: 300px;
+  }
 }
 @media screen and (max-width: 1400px) {
   .container {
     width: 1140px;
   }
+
+  .preview-content {
+    padding: 60px;
+  }
 }
 @media screen and (max-width: 1200px) {
   .container {
     width: 960px;
+  }
+
+  .preview {
+    width: 760px;
   }
 }
 @media screen and (max-width: 992px) {
@@ -23,13 +40,47 @@
   }
 
   .preview {
-    width: 700px;
+    width: 650px;
+  }
+}
+@media screen and (max-width: 830px) {
+  .preview-illustration {
+    display: none;
+  }
+
+  .preview {
+    padding: 40px 0 0 0;
+  }
+  .preview .preview-content {
+    padding: 30px;
   }
 }
 @media screen and (max-width: 768px) {
-  .container,
-.preview {
+  .container {
     width: 540px;
+  }
+
+  .preview {
+    width: 500px;
+  }
+  .preview .preview-buttons {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  .preview .preview-input {
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(68, 68, 68, 0.4);
+  }
+  .preview .preview-show {
+    color: #444444;
+  }
+  .preview .preview-output .preview-city-header {
+    text-align: center;
+  }
+  .preview .preview-output .city-info-list {
+    justify-content: center;
   }
 }
 @media screen and (max-width: 576px) {
