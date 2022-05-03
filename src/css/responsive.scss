@@ -15,6 +15,10 @@
 			height: 300px;
 		}
 	}
+
+	.scroll-down-wrapper {
+		padding: 100px 0;
+	}
 }
 
 @media screen and (max-width: 1400px) {
@@ -24,6 +28,10 @@
 
 	.preview-content {
 		padding: 60px;
+	}
+
+	.scroll-down-wrapper {
+		padding: 100px 0;
 	}
 }
 
@@ -98,6 +106,10 @@
 				justify-content: center;
 			}
 		}
+	}
+
+	.scroll-down-wrapper {
+		padding: 50px 0;
 	}
 }
 

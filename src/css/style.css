@@ -162,7 +162,6 @@ header .title::after {
 }
 
 .scroll-down-wrapper {
-  padding: 100px 0;
   position: relative;
   display: flex;
   justify-content: center;
