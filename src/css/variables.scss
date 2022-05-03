@@ -1,6 +1,7 @@
 $accent-green: rgba(114, 215, 190, 0.5);
 $accent-purple: #C7CEEE;
 $text-dark: #444444;
+$accent-blue: #1A68B0;
 
 @mixin font($fontFamily, $fontSize, $fontWight, $fontColor) {
 	font-family: $fontFamily;
