@@ -18,7 +18,7 @@ html {
 }
 
 header {
-	width: 100vw;
+	width: 100%;
 	height: 10vh;
 	background-color: $accent-purple;
 	@include flex(center, center, '');
@@ -44,8 +44,8 @@ header {
 }
 
 .preview {
+	user-select: none;
 	padding: 90px 0 0 0;
-	height: 90vh;
 	width: 940px;
 	margin: 0 auto;
 
@@ -124,7 +124,7 @@ header {
 
 					span.city-info-item {
 						justify-self: center;
-						@include font('Inter', 18px, 600, #1A68B0);
+						@include font('Inter', 18px, 600, $accent-blue);
 					}
 				}
 			}
@@ -140,5 +140,46 @@ header {
 				}
 			}
 		}
+	}
+}
+
+.scroll-down-wrapper {
+	padding: 100px 0;
+	position: relative;
+	@include flex(center, center, '');
+
+	.scroll-down-btn {
+		cursor: pointer;
+		width: 85px;
+		height: 85px;
+		background-color: $accent-purple;
+		border: 1px solid $text-dark;
+		transform: rotate(45deg);
+		position: relative;
+		transition: transform cubic-bezier(.59, .9, .72, 1.07) 0.2s;
+
+		&:hover {
+			transform: scale(1.07) rotate(45deg);
+		}
+
+		.scroll-down-arrow {
+			position: absolute;
+			top: 54%;
+			left: 54%;
+			border-style: solid;
+			border-width: 15px 9px 0 9px;
+			border-color: $text-dark transparent transparent transparent;
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+
+	.line {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: $text-dark;
+		z-index: -1;
 	}
 }

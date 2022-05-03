@@ -16,7 +16,7 @@ html {
 }
 
 header {
-  width: 100vw;
+  width: 100%;
   height: 10vh;
   background-color: #C7CEEE;
   display: flex;
@@ -52,8 +52,11 @@ header .title::after {
 }
 
 .preview {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   padding: 90px 0 0 0;
-  height: 90vh;
   width: 940px;
   margin: 0 auto;
 }
@@ -156,4 +159,44 @@ header .title::after {
 .preview .preview-content .preview-output .preview-illustration img {
   width: 300px;
   height: 300px;
+}
+
+.scroll-down-wrapper {
+  padding: 100px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: "";
+}
+.scroll-down-wrapper .scroll-down-btn {
+  cursor: pointer;
+  width: 85px;
+  height: 85px;
+  background-color: #C7CEEE;
+  border: 1px solid #444444;
+  transform: rotate(45deg);
+  position: relative;
+  transition: transform cubic-bezier(0.59, 0.9, 0.72, 1.07) 0.2s;
+}
+.scroll-down-wrapper .scroll-down-btn:hover {
+  transform: scale(1.07) rotate(45deg);
+}
+.scroll-down-wrapper .scroll-down-btn .scroll-down-arrow {
+  position: absolute;
+  top: 54%;
+  left: 54%;
+  border-style: solid;
+  border-width: 15px 9px 0 9px;
+  border-color: #444444 transparent transparent transparent;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.scroll-down-wrapper .line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #444444;
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */
