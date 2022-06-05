@@ -57,26 +57,30 @@
 		</div>
 
 		<div class="container">
-			<div class="user-input">
-				<input id="userInput" type="text">
-				<button id="showWeatherBtn">show</button>
-			</div>
-			<div class="weather-data">
-				<div id="city"></div>
-				<div class="field">
-					temp: <span id="temp_field"></span>
+			<div class="weather-output-wrapper">
+				<div class="user-input">
+					<input class="input-field" id="userInput" type="text">
+					<button class="show-weather-btn" id="showWeatherBtn">show</button>
 				</div>
-				<div class="field">
-					how it feels: <span id="feels_like"></span>
-				</div>
-				<div class="field">
-					max temp: <span id="max_temp"></span>
-				</div>
-				<div class="field">
-					min temp: <span id="min_temp"></span>
-				</div>
-				<div class="field">
-					clouds: <span id="clouds"></span>
+				<div class="weather-data">
+					<div class="city" id="city"></div>
+					<div class="weather-data-fields">
+						<div class="field">
+							temp: <span id="temp_field"></span>
+						</div>
+						<div class="field">
+							how it feels: <span id="feels_like"></span>
+						</div>
+						<div class="field">
+							max temp: <span id="max_temp"></span>
+						</div>
+						<div class="field">
+							min temp: <span id="min_temp"></span>
+						</div>
+						<div class="field">
+							clouds: <span id="clouds"></span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

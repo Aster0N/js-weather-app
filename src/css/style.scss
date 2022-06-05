@@ -182,3 +182,61 @@ header {
 		z-index: -1;
 	}
 }
+
+.weather-output-wrapper {
+	padding: 0 100px 100px 100px;
+
+	.user-input {
+		column-gap: 30px;
+		@include flex(start, center, '');
+
+		.input-field,
+		.show-weather-btn {
+			outline: none;
+			width: 180px;
+			height: 50px;
+			border: 2px solid $text-dark;
+			@include font('Inter', 20px, medium, $text-dark);
+		}
+
+		.input-field {
+			padding: 0 20px 0;
+			transition: all 0.5s ease;
+
+			&:hover,
+			&:focus {
+				border: 2px solid rgba($text-dark, 0.8);
+			}
+		}
+
+		.show-weather-btn {
+			background-color: #fff;
+			cursor: pointer;
+			text-transform: uppercase;
+			transition: all 0.5s ease;
+
+			&:hover,
+			&:focus {
+				background-color: rgba($accent-blue, 0.1);
+				transform: translateX(5px);
+			}
+		}
+	}
+
+	.weather-data {
+		.city {
+			margin: 20px 0 30px;
+			text-transform: uppercase;
+			@include font('Montserrat', 24px, 600, $text-dark);
+		}
+
+		.weather-data-fields {
+			@include flex(start, start, column);
+			gap: 10px;
+
+			.field {}
+		}
+	}
+
+
+}
