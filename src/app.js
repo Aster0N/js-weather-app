@@ -13,6 +13,8 @@ const maxTempField = document.querySelector('#maxTemp')
 const minTempField = document.querySelector('#minTemp')
 const cloudsField = document.querySelector('#clouds')
 const showWeatherBtn = document.querySelector('#showWeatherBtn')
+const errorField = document.querySelector('#inputErrorField')
+const weatherFields = document.querySelectorAll('.field')
 
 
 function fillHTMLData(data) {
@@ -39,14 +41,21 @@ showWeatherBtn.addEventListener('click', () => {
 					return response.json()
 				}
 				if (response.status == 404) {
-					// The name of the city is entered incorrectly
+					weatherFields.forEach(field => {
+						field.classList.remove('field-border-active')
+						field.classList.add('error-border')
+					})
+					errorField.classList.add('error-field-active')
+					errorField.innerHTML = 'The name of the city is entered incorrectly'
 				}
 				throw new Error('Something went wrong')
 			})
 			.then(data => {
-				document.querySelectorAll('.field').forEach(field => {
+				weatherFields.forEach(field => {
 					field.classList.add('field-border-active')
+					field.classList.remove('error-border')
 				})
+				errorField.classList.remove('error-field-active')
 				fillHTMLData(data)
 			})
 			.catch(error => {

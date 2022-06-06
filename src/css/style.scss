@@ -221,6 +221,25 @@ header {
 				transform: translateX(5px);
 			}
 		}
+
+		.user-input-error {
+			height: 50px;
+			visibility: hidden;
+			opacity: 0;
+			transform: translateY(-10px);
+			transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+			user-select: none;
+			padding: 15px;
+			border: 1px solid rgba(231, 77, 60, 0.9);
+			background-color: #F9DBDB;
+			@include font("Montserrat", 16px, 500, #eb2f06)
+		}
+
+		.user-input-error.error-field-active {
+			visibility: visible;
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 
 	.weather-data {
@@ -237,13 +256,17 @@ header {
 			.field {
 				width: 240px;
 				border-bottom: 1px solid transparent;
-				transition: border 0.5s ease-in;
+				transition: border 0.3s ease-in;
 				@include font('Inter', 20px, 400, $text-dark);
 				@include flex(space-between, center, '');
 
 				.field-indicators {
 					@include font('Inter', 20px, 600, $accent-blue);
 				}
+			}
+
+			.field.error-border {
+				border-bottom: 1px solid rgba(216, 74, 58, 0.6);
 			}
 
 			.field.field-border-active {
