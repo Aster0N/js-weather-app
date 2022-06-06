@@ -82,7 +82,7 @@ header {
 				width: 200px;
 				height: 50px;
 				@include flex(center, center, '');
-				@include font('Inter', 18px, 400, $text-dark)
+				@include font('Inter', 18px, 400, $text-dark);
 			}
 
 			.preview-input {
@@ -123,7 +123,7 @@ header {
 					grid-template: repeat(4, 30px) / 130px 80px;
 
 					span.city-info-item {
-						justify-self: center;
+						justify-self: end;
 						@include font('Inter', 18px, 600, $accent-blue);
 					}
 				}
@@ -231,10 +231,24 @@ header {
 		}
 
 		.weather-data-fields {
-			@include flex(start, start, column);
 			gap: 10px;
+			@include flex(start, start, column);
 
-			.field {}
+			.field {
+				width: 240px;
+				border-bottom: 1px solid transparent;
+				transition: border 0.5s ease-in;
+				@include font('Inter', 20px, 400, $text-dark);
+				@include flex(space-between, center, '');
+
+				.field-indicators {
+					@include font('Inter', 20px, 600, $accent-blue);
+				}
+			}
+
+			.field.field-border-active {
+				border-bottom: 1px solid rgba(119, 119, 119, 0.1);
+			}
 		}
 	}
 

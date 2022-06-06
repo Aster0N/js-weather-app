@@ -39,6 +39,10 @@ async function getData(url) {
 }
 
 showWeatherBtn.addEventListener('click', () => {
+	document.querySelectorAll('.field').forEach(field => {
+		field.classList.add('field-border-active')
+	})
+
 	if (userCityInput.value) {
 		let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404';
 		getData(url).then(data => {
