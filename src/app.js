@@ -28,26 +28,29 @@ function fillHTMLData(data) {
 	cloudsField.innerHTML = clouds;
 }
 
-async function getData(url) {
-	try {
-		const response = await fetch(url)
-		const data = await response.json()
-		return data
-	} catch (error) {
-		console.error(error)
-	}
-}
-
 showWeatherBtn.addEventListener('click', () => {
-	document.querySelectorAll('.field').forEach(field => {
-		field.classList.add('field-border-active')
-	})
 
 	if (userCityInput.value) {
 		let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404';
-		getData(url).then(data => {
-			console.log(data)
-			fillHTMLData(data)
-		})
+
+		fetch(url)
+			.then(response => {
+				if (response.ok) {
+					return response.json()
+				}
+				if (response.status == 404) {
+					// The name of the city is entered incorrectly
+				}
+				throw new Error('Something went wrong')
+			})
+			.then(data => {
+				document.querySelectorAll('.field').forEach(field => {
+					field.classList.add('field-border-active')
+				})
+				fillHTMLData(data)
+			})
+			.catch(error => {
+				console.error(error)
+			})
 	}
 })
