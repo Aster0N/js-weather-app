@@ -1,4 +1,4 @@
-const scrollDownBtn = document.querySelector("#scrollDownBtn");
+const scrollDownBtn = document.querySelector("#scrollDownBtn")
 
 scrollDownBtn.addEventListener('click', e => {
 	e.target.scrollIntoView({
@@ -16,24 +16,31 @@ const showWeatherBtn = document.querySelector('#showWeatherBtn')
 const errorField = document.querySelector('#inputErrorField')
 const weatherFields = document.querySelectorAll('.field')
 
+const tempMeasurementFields = document.querySelectorAll('.measurement-temp')
+const cloudsMeasurementFields = document.querySelector('.measurement-clouds')
 
 function fillHTMLData(data) {
-	const temp = data['main']['temp'];
-	const tempFeeling = data['main']['feels_like'];
-	const maxTemp = data['main']['temp_max'];
-	const minTemp = data['main']['temp_min'];
-	const clouds = data['clouds']['all'];
-	tempField.innerHTML = temp;
-	feelingField.innerHTML = tempFeeling;
-	maxTempField.innerHTML = maxTemp;
-	minTempField.innerHTML = minTemp;
-	cloudsField.innerHTML = clouds;
+	const temp = data['main']['temp']
+	const tempFeeling = data['main']['feels_like']
+	const maxTemp = data['main']['temp_max']
+	const minTemp = data['main']['temp_min']
+	const clouds = data['clouds']['all']
+	tempField.innerHTML = Math.floor(temp - 273.15)
+	feelingField.innerHTML = Math.floor(tempFeeling - 273.15)
+	maxTempField.innerHTML = Math.floor(maxTemp - 273.15)
+	minTempField.innerHTML = Math.floor(minTemp - 273.15)
+	cloudsField.innerHTML = clouds
+
+	tempMeasurementFields.forEach(field => {
+		field.innerHTML = '°C'
+	})
+	cloudsMeasurementFields.innerHTML = '%'
 }
 
 showWeatherBtn.addEventListener('click', () => {
 
 	if (userCityInput.value) {
-		let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404';
+		let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404'
 
 		fetch(url)
 			.then(response => {
@@ -57,6 +64,7 @@ showWeatherBtn.addEventListener('click', () => {
 				})
 				errorField.classList.remove('error-field-active')
 				fillHTMLData(data)
+				console.log(data)
 			})
 			.catch(error => {
 				console.error(error)
