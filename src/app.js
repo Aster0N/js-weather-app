@@ -7,6 +7,8 @@ scrollDownBtn.addEventListener('click', e => {
 })
 
 const userCityInput = document.querySelector('#userInput')
+const cityField = document.querySelector('#cityName')
+const weatherBriefDescription = document.querySelector('#weatherBriefDescription')
 const tempField = document.querySelector('#tempField')
 const feelingField = document.querySelector('#feelsLike')
 const maxTempField = document.querySelector('#maxTemp')
@@ -20,6 +22,7 @@ const tempMeasurementFields = document.querySelectorAll('.measurement-temp')
 const cloudsMeasurementFields = document.querySelector('.measurement-clouds')
 
 function fillHTMLData(data) {
+	const description = data['weather'][0]['description']
 	const temp = data['main']['temp']
 	const tempFeeling = data['main']['feels_like']
 	const maxTemp = data['main']['temp_max']
@@ -30,6 +33,9 @@ function fillHTMLData(data) {
 	maxTempField.innerHTML = Math.floor(maxTemp - 273.15)
 	minTempField.innerHTML = Math.floor(minTemp - 273.15)
 	cloudsField.innerHTML = clouds
+
+	cityField.innerHTML = userCityInput.value
+	weatherBriefDescription.innerHTML = description
 
 	tempMeasurementFields.forEach(field => {
 		field.innerHTML = '°C'
@@ -63,6 +69,8 @@ showWeatherBtn.addEventListener('click', () => {
 					field.classList.remove('error-border')
 				})
 				errorField.classList.remove('error-field-active')
+
+				document.querySelector('.city').style.margin = '20px 0 30px'
 				fillHTMLData(data)
 				console.log(data)
 			})

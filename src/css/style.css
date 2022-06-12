@@ -227,7 +227,7 @@ header .title::after {
   transition: all 0.5s ease;
 }
 .weather-output-wrapper .user-input .input-field:hover, .weather-output-wrapper .user-input .input-field:focus {
-  border: 2px solid rgba(68, 68, 68, 0.8);
+  border: 2px solid rgba(68, 68, 68, 0.6);
 }
 .weather-output-wrapper .user-input .show-weather-btn {
   background-color: #fff;
@@ -262,13 +262,18 @@ header .title::after {
   opacity: 1;
   transform: translateY(0);
 }
-.weather-output-wrapper .weather-data .city {
-  margin: 20px 0 30px;
+.weather-output-wrapper .weather-data .city .city-name {
   text-transform: uppercase;
   font-family: "Montserrat";
   font-size: 24px;
   font-weight: 600;
   color: #444444;
+}
+.weather-output-wrapper .weather-data .city .weather-brief-description {
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 400;
+  color: #1A68B0;
 }
 .weather-output-wrapper .weather-data .weather-data-fields {
   gap: 10px;

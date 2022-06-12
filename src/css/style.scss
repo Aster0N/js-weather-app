@@ -205,7 +205,7 @@ header {
 
 			&:hover,
 			&:focus {
-				border: 2px solid rgba($text-dark, 0.8);
+				border: 2px solid rgba($text-dark, 0.6);
 			}
 		}
 
@@ -244,9 +244,14 @@ header {
 
 	.weather-data {
 		.city {
-			margin: 20px 0 30px;
-			text-transform: uppercase;
-			@include font('Montserrat', 24px, 600, $text-dark);
+			.city-name {
+				text-transform: uppercase;
+				@include font('Montserrat', 24px, 600, $text-dark);
+			}
+
+			.weather-brief-description {
+				@include font('Montserrat', 18px, 400, $accent-blue);
+			}
 		}
 
 		.weather-data-fields {
