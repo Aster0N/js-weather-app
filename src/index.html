@@ -10,8 +10,6 @@
 </head>
 
 <body>
-
-
 	<header>
 		<span class="title">what's the weather now?</span>
 	</header>
@@ -59,7 +57,7 @@
 		<div class="container">
 			<div class="weather-output-wrapper">
 				<div class="user-input">
-					<input class="input-field" id="userInput" type="text">
+					<input class="input-field" id="userInput" type="text" placeholder="City">
 					<button class="show-weather-btn" id="showWeatherBtn">show</button>
 					<div class="user-input-error" id="inputErrorField"></div>
 				</div>
@@ -77,7 +75,7 @@
 							</div>
 						</div>
 						<div class="field">
-							how it feel
+							feels like
 							<div class="indicators">
 								<span class="field-indicators" id="feelsLike"></span>
 								<span class="measurement-temp"></span>
@@ -101,7 +99,21 @@
 							clouds
 							<div class="indicators">
 								<span class="field-indicators" id="clouds"></span>
-								<span class="measurement-clouds"></span>
+								<span class="measurement-percent"></span>
+							</div>
+						</div>
+						<div class="field">
+							wind
+							<div class="indicators">
+								<span class="field-indicators" id="wind"></span>
+								<span class="measurement-wind"></span>
+							</div>
+						</div>
+						<div class="field">
+							humidity
+							<div class="indicators">
+								<span class="field-indicators" id="humidity"></span>
+								<span class="measurement-percent"></span>
 							</div>
 						</div>
 					</div>

@@ -14,12 +14,15 @@ const feelingField = document.querySelector('#feelsLike')
 const maxTempField = document.querySelector('#maxTemp')
 const minTempField = document.querySelector('#minTemp')
 const cloudsField = document.querySelector('#clouds')
+const windField = document.querySelector("#wind")
+const humidityField = document.querySelector("#humidity")
 const showWeatherBtn = document.querySelector('#showWeatherBtn')
 const errorField = document.querySelector('#inputErrorField')
 const weatherFields = document.querySelectorAll('.field')
 
 const tempMeasurementFields = document.querySelectorAll('.measurement-temp')
-const cloudsMeasurementFields = document.querySelector('.measurement-clouds')
+const percentMeasurementFields = document.querySelectorAll('.measurement-percent')
+const windMeasurementFields = document.querySelector('.measurement-wind')
 
 function fillHTMLData(data) {
 	const description = data['weather'][0]['description']
@@ -28,11 +31,16 @@ function fillHTMLData(data) {
 	const maxTemp = data['main']['temp_max']
 	const minTemp = data['main']['temp_min']
 	const clouds = data['clouds']['all']
+	const wind = data['wind']['speed']
+	const humidity = data['main']['humidity']
+
 	tempField.innerHTML = Math.floor(temp - 273.15)
 	feelingField.innerHTML = Math.floor(tempFeeling - 273.15)
 	maxTempField.innerHTML = Math.floor(maxTemp - 273.15)
 	minTempField.innerHTML = Math.floor(minTemp - 273.15)
 	cloudsField.innerHTML = clouds
+	windField.innerHTML = wind
+	humidityField.innerHTML = humidity
 
 	cityField.innerHTML = userCityInput.value
 	weatherBriefDescription.innerHTML = description
@@ -40,7 +48,10 @@ function fillHTMLData(data) {
 	tempMeasurementFields.forEach(field => {
 		field.innerHTML = '°C'
 	})
-	cloudsMeasurementFields.innerHTML = '%'
+	percentMeasurementFields.forEach(field => {
+		field.innerHTML = '%'
+	})
+	windMeasurementFields.innerHTML = 'm/s'
 }
 
 showWeatherBtn.addEventListener('click', () => {
