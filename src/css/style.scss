@@ -114,8 +114,20 @@ header {
 			}
 		}
 
-		.weather-data-fields {
-			padding: 50px;
+		.weather-data-fields.data-fields-closed {
+			height: 0;
+			border-top: 2px solid rgba($text-dark, 0.6);
+			padding: 0;
+			overflow: hidden;
+		}
+
+		.weather-data-fields.data-fields-opened {
+			border: 2px solid rgba($text-dark, 0.1);
+		}
+
+		.weather-data-fields,
+		.weather-data-fields.data-fields-opened {
+			padding: 30px 50px;
 			gap: 10px;
 			@include flex(start, start, column);
 

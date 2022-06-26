@@ -126,15 +126,26 @@ header .title::after {
   font-weight: 400;
   color: #1A68B0;
 }
-.weather-output-wrapper .weather-data .weather-data-fields {
-  padding: 50px;
+.weather-output-wrapper .weather-data .weather-data-fields.data-fields-closed {
+  height: 0;
+  border-top: 2px solid rgba(68, 68, 68, 0.6);
+  padding: 0;
+  overflow: hidden;
+}
+.weather-output-wrapper .weather-data .weather-data-fields.data-fields-opened {
+  border: 2px solid rgba(68, 68, 68, 0.1);
+}
+.weather-output-wrapper .weather-data .weather-data-fields,
+.weather-output-wrapper .weather-data .weather-data-fields.data-fields-opened {
+  padding: 30px 50px;
   gap: 10px;
   display: flex;
   justify-content: start;
   align-items: start;
   flex-direction: column;
 }
-.weather-output-wrapper .weather-data .weather-data-fields .field {
+.weather-output-wrapper .weather-data .weather-data-fields .field,
+.weather-output-wrapper .weather-data .weather-data-fields.data-fields-opened .field {
   width: 240px;
   border-bottom: 1px solid transparent;
   transition: border 0.3s ease-in;
@@ -147,15 +158,18 @@ header .title::after {
   align-items: center;
   flex-direction: "";
 }
-.weather-output-wrapper .weather-data .weather-data-fields .field .field-indicators {
+.weather-output-wrapper .weather-data .weather-data-fields .field .field-indicators,
+.weather-output-wrapper .weather-data .weather-data-fields.data-fields-opened .field .field-indicators {
   font-family: "Inter";
   font-size: 20px;
   font-weight: 600;
   color: #1A68B0;
 }
-.weather-output-wrapper .weather-data .weather-data-fields .field.error-border {
+.weather-output-wrapper .weather-data .weather-data-fields .field.error-border,
+.weather-output-wrapper .weather-data .weather-data-fields.data-fields-opened .field.error-border {
   border-bottom: 1px solid rgba(216, 74, 58, 0.6);
 }
-.weather-output-wrapper .weather-data .weather-data-fields .field.field-border-active {
+.weather-output-wrapper .weather-data .weather-data-fields .field.field-border-active,
+.weather-output-wrapper .weather-data .weather-data-fields.data-fields-opened .field.field-border-active {
   border-bottom: 1px solid rgba(119, 119, 119, 0.1);
 }/*# sourceMappingURL=style.css.map */
