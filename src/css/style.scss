@@ -44,7 +44,7 @@ header {
 }
 
 .weather-output-wrapper {
-	padding: 0 100px 100px 100px;
+	padding: 100px 100px 0 100px;
 
 	.user-input {
 		column-gap: 30px;
@@ -115,6 +115,7 @@ header {
 		}
 
 		.weather-data-fields {
+			padding: 50px;
 			gap: 10px;
 			@include flex(start, start, column);
 
