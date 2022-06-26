@@ -1,11 +1,3 @@
-const scrollDownBtn = document.querySelector("#scrollDownBtn")
-
-scrollDownBtn.addEventListener('click', e => {
-	e.target.scrollIntoView({
-		behavior: 'smooth'
-	});
-})
-
 const userCityInput = document.querySelector('#userInput')
 const cityField = document.querySelector('#cityName')
 const weatherBriefDescription = document.querySelector('#weatherBriefDescription')
