@@ -8,9 +8,11 @@ const minTempField = document.querySelector('#minTemp')
 const cloudsField = document.querySelector('#clouds')
 const windField = document.querySelector("#wind")
 const humidityField = document.querySelector("#humidity")
+
 const showWeatherBtn = document.querySelector('#showWeatherBtn')
 const errorField = document.querySelector('#inputErrorField')
 const weatherFields = document.querySelectorAll('.field')
+const fieldsWrapper = document.querySelector(".weather-data-fields")
 
 const tempMeasurementFields = document.querySelectorAll('.measurement-temp')
 const percentMeasurementFields = document.querySelectorAll('.measurement-percent')
@@ -72,8 +74,12 @@ showWeatherBtn.addEventListener('click', () => {
 					field.classList.remove('error-border')
 				})
 				errorField.classList.remove('error-field-active')
+				if (fieldsWrapper.classList.contains("data-fields-closed")) {
+					fieldsWrapper.classList.remove("data-fields-closed")
+					fieldsWrapper.classList.add("data-fields-opened")
+				}
 
-				document.querySelector('.city').style.margin = '20px 0 30px'
+				document.querySelector('.city').style.margin = '30px 0 20px 50px'
 				fillHTMLData(data)
 				console.log(data)
 			})
