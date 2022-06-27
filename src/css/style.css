@@ -120,12 +120,6 @@ header .title::after {
   font-weight: 600;
   color: #444444;
 }
-.weather-output-wrapper .weather-data .city .weather-brief-description {
-  font-family: "Montserrat";
-  font-size: 18px;
-  font-weight: 400;
-  color: #1A68B0;
-}
 .weather-output-wrapper .weather-data .weather-data-fields.data-fields-closed {
   height: 0;
   border-top: 2px solid rgba(68, 68, 68, 0.6);
@@ -144,13 +138,28 @@ header .title::after {
   align-items: start;
   flex-direction: column;
 }
+.weather-output-wrapper .weather-data .weather-data-fields .weather-day-title,
+.weather-output-wrapper .weather-data .weather-data-fields.data-fields-opened .weather-day-title {
+  margin: 0 0 10px 0;
+  font-family: "Montserrat";
+  font-size: 20px;
+  font-weight: 600;
+  color: #1A68B0;
+}
+.weather-output-wrapper .weather-data .weather-data-fields .weather-day-title .weather-brief-description,
+.weather-output-wrapper .weather-data .weather-data-fields.data-fields-opened .weather-day-title .weather-brief-description {
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 400;
+  color: #1A68B0;
+}
 .weather-output-wrapper .weather-data .weather-data-fields .field,
 .weather-output-wrapper .weather-data .weather-data-fields.data-fields-opened .field {
   width: 240px;
   border-bottom: 1px solid transparent;
   transition: border 0.3s ease-in;
   font-family: "Inter";
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   color: #444444;
   display: flex;
@@ -161,7 +170,7 @@ header .title::after {
 .weather-output-wrapper .weather-data .weather-data-fields .field .field-indicators,
 .weather-output-wrapper .weather-data .weather-data-fields.data-fields-opened .field .field-indicators {
   font-family: "Inter";
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #1A68B0;
 }
