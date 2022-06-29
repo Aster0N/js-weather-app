@@ -18,7 +18,7 @@ const tempMeasurementFields = document.querySelectorAll('.measurement-temp')
 const percentMeasurementFields = document.querySelectorAll('.measurement-percent')
 const windMeasurementFields = document.querySelector('.measurement-wind')
 
-function fillHTMLData(data) {
+function fillCurrentWeatherFields(data) {
 	const description = data['weather'][0]['description']
 	const temp = data['main']['temp']
 	const tempFeeling = data['main']['feels_like']
@@ -81,7 +81,7 @@ showWeatherBtn.addEventListener('click', () => {
 				}
 
 				document.querySelector('.city').style.margin = '30px 0 20px 50px'
-				fillHTMLData(data)
+				fillCurrentWeatherFields(data)
 				console.log(data)
 			})
 			.catch(error => {
