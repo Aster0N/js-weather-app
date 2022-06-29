@@ -87,5 +87,16 @@ showWeatherBtn.addEventListener('click', () => {
 			.catch(error => {
 				console.error(error)
 			})
+
+		let hourlyWeatherURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404&units=metric'
+
+		getData(hourlyWeatherURL)
+			.then(data => {
+				console.log('hourly data')
+				console.log(data)
+			})
+			.catch(error => {
+				console.error(error)
+			})
 	}
 })
