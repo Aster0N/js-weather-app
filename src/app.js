@@ -48,26 +48,27 @@ function fillHTMLData(data) {
 	windMeasurementFields.innerHTML = 'm/s'
 }
 
-showWeatherBtn.addEventListener('click', () => {
+async function getData(url) {
+	const response = await fetch(url)
+	if (response.ok) {
+		return response.json()
+	}
+	if (response.status == 404) {
+		weatherFields.forEach(field => {
+			field.classList.remove('field-border-active')
+			field.classList.add('error-border')
+		})
+		errorField.classList.add('error-field-active')
+		errorField.innerHTML = 'The name of the city is entered incorrectly'
+	}
+	throw new Error('Something went wrong')
+}
 
+showWeatherBtn.addEventListener('click', () => {
 	if (userCityInput.value) {
 		let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404'
 
-		fetch(url)
-			.then(response => {
-				if (response.ok) {
-					return response.json()
-				}
-				if (response.status == 404) {
-					weatherFields.forEach(field => {
-						field.classList.remove('field-border-active')
-						field.classList.add('error-border')
-					})
-					errorField.classList.add('error-field-active')
-					errorField.innerHTML = 'The name of the city is entered incorrectly'
-				}
-				throw new Error('Something went wrong')
-			})
+		getData(url)
 			.then(data => {
 				weatherFields.forEach(field => {
 					field.classList.add('field-border-active')
