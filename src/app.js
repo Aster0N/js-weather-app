@@ -28,10 +28,10 @@ function fillCurrentWeatherFields(data) {
 	const wind = data['wind']['speed']
 	const humidity = data['main']['humidity']
 
-	tempField.innerHTML = Math.floor(temp - 273.15)
-	feelingField.innerHTML = Math.floor(tempFeeling - 273.15)
-	maxTempField.innerHTML = Math.floor(maxTemp - 273.15)
-	minTempField.innerHTML = Math.floor(minTemp - 273.15)
+	tempField.innerHTML = temp
+	feelingField.innerHTML = tempFeeling
+	maxTempField.innerHTML = maxTemp
+	minTempField.innerHTML = minTemp
 	cloudsField.innerHTML = clouds
 	windField.innerHTML = wind
 	humidityField.innerHTML = humidity
@@ -66,7 +66,7 @@ async function getData(url) {
 
 showWeatherBtn.addEventListener('click', () => {
 	if (userCityInput.value) {
-		let currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404'
+		let currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404&units=metric'
 
 		getData(currentWeatherURL)
 			.then(data => {
