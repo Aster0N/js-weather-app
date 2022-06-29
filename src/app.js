@@ -66,9 +66,9 @@ async function getData(url) {
 
 showWeatherBtn.addEventListener('click', () => {
 	if (userCityInput.value) {
-		let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404'
+		let currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404'
 
-		getData(url)
+		getData(currentWeatherURL)
 			.then(data => {
 				weatherFields.forEach(field => {
 					field.classList.add('field-border-active')
