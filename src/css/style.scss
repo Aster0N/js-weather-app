@@ -124,39 +124,43 @@ header {
 		.weather-data-fields,
 		.weather-data-fields.data-fields-opened {
 			padding: 30px 50px;
-			gap: 10px;
-			@include flex(start, start, column);
+			gap: 100px;
+			@include flex(start, start, '');
 
-			.weather-day-title {
-				margin: 0 0 10px 0;
-				@include font('Montserrat', 20px, 600, $accent-blue);
+			.weather-data-today {
+				gap: 10px;
+				@include flex(start, start, column);
 
-				.weather-brief-description {
-					@include font('Montserrat', 18px, 400, $accent-blue);
+				.weather-day-title {
+					margin: 0 0 10px 0;
+					@include font('Montserrat', 20px, 600, $accent-blue);
+
+					.weather-brief-description {
+						@include font('Montserrat', 18px, 400, $accent-blue);
+					}
 				}
-			}
 
-			.field {
-				width: 240px;
-				border-bottom: 1px solid transparent;
-				transition: border 0.3s ease-in;
-				@include font('Inter', 18px, 400, $text-dark);
-				@include flex(space-between, center, '');
+				.field {
+					width: 240px;
+					border-bottom: 1px solid transparent;
+					transition: border 0.3s ease-in;
+					@include font('Inter', 18px, 400, $text-dark);
+					@include flex(space-between, center, '');
 
-				.field-indicators {
-					@include font('Inter', 18px, 600, $accent-blue);
+					.field-indicators {
+						@include font('Inter', 18px, 600, $accent-blue);
+					}
 				}
-			}
 
-			.field.error-border {
-				border-bottom: 1px solid rgba(216, 74, 58, 0.6);
-			}
+				.field.error-border {
+					border-bottom: 1px solid rgba(216, 74, 58, 0.6);
+				}
 
-			.field.field-border-active {
-				border-bottom: 1px solid rgba(119, 119, 119, 0.1);
+				.field.field-border-active {
+					border-bottom: 1px solid rgba(119, 119, 119, 0.1);
+				}
 			}
 		}
 	}
-
 
 }
