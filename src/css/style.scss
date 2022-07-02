@@ -43,148 +43,8 @@ header {
 	}
 }
 
-.preview {
-	user-select: none;
-	padding: 90px 0 0 0;
-	width: 940px;
-	margin: 0 auto;
-
-	.preview-title {
-		position: relative;
-		@include font('Montserrat', 20px, 600, $text-dark);
-
-		&::after {
-			content: '';
-			display: block;
-			width: 100%;
-			height: 50%;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			background-color: $accent-green;
-			z-index: -1;
-		}
-	}
-
-	.preview-content {
-		margin: 30px 0 0 0;
-		width: 100%;
-		border: 2px solid #777;
-		background-color: #f8f8f8;
-		position: relative;
-
-		.preview-buttons {
-			user-select: none;
-			column-gap: 40px;
-			@include flex(start, center, '');
-
-			.preview-button {
-				width: 200px;
-				height: 50px;
-				@include flex(center, center, '');
-				@include font('Inter', 18px, 400, $text-dark);
-			}
-
-			.preview-input {
-				color: rgba($text-dark, 0.4);
-				border: 1px solid #333;
-				position: relative;
-
-				&::before {
-					content: '';
-					display: block;
-					width: 8px;
-					height: 100%;
-					position: absolute;
-					top: 0;
-					left: 0;
-					background-color: #333;
-				}
-			}
-
-			.preview-show {
-				background-color: #fff;
-			}
-		}
-
-		.preview-output {
-			margin: 40px 0 0 0;
-
-			.preview-city-header {
-				text-transform: uppercase;
-				@include font('Montserrat', 24px, 600, $text-dark);
-			}
-
-			.preview-city-info {
-				margin: 20px 0 0 0;
-
-				.city-info-list {
-					display: grid;
-					grid-template: repeat(4, 30px) / 130px 80px;
-
-					span.city-info-item {
-						justify-self: end;
-						@include font('Inter', 18px, 600, $accent-blue);
-					}
-				}
-			}
-
-			.preview-illustration {
-				position: absolute;
-				right: -10%;
-				top: 30%;
-
-				img {
-					width: 300px;
-					height: 300px;
-				}
-			}
-		}
-	}
-}
-
-.scroll-down-wrapper {
-	position: relative;
-	@include flex(center, center, '');
-
-	.scroll-down-btn {
-		cursor: pointer;
-		width: 85px;
-		height: 85px;
-		background-color: $accent-purple;
-		border: 1px solid $text-dark;
-		transform: rotate(45deg);
-		position: relative;
-		transition: transform cubic-bezier(.59, .9, .72, 1.07) 0.2s;
-
-		&:hover {
-			transform: scale(1.07) rotate(45deg);
-		}
-
-		.scroll-down-arrow {
-			position: absolute;
-			top: 54%;
-			left: 54%;
-			border-style: solid;
-			border-width: 15px 9px 0 9px;
-			border-color: $text-dark transparent transparent transparent;
-			transform: translate(-50%, -50%) rotate(-45deg);
-		}
-	}
-
-	.line {
-		position: absolute;
-		top: 50%;
-		left: 0;
-		width: 100%;
-		height: 1px;
-		background-color: $text-dark;
-		z-index: -1;
-	}
-}
-
 .weather-output-wrapper {
-	padding: 0 100px 100px 100px;
+	padding: 100px 100px 0 100px;
 
 	.user-input {
 		column-gap: 30px;
@@ -248,37 +108,59 @@ header {
 				text-transform: uppercase;
 				@include font('Montserrat', 24px, 600, $text-dark);
 			}
+		}
+
+		.weather-data-fields.data-fields-closed {
+			height: 0;
+			border-top: 2px solid rgba($text-dark, 0.6);
+			padding: 0;
+			overflow: hidden;
+		}
+
+		.weather-data-fields.data-fields-opened {
+			border: 2px solid rgba($text-dark, 0.1);
+		}
+
+		.weather-data-fields,
+		.weather-data-fields.data-fields-opened {
+			padding: 30px 50px;
+			gap: 100px;
+			@include flex(start, start, '');
+
+			.weather-data-today {
+				gap: 10px;
+				@include flex(start, start, column);
+			}
+		}
+
+		.weather-day-title {
+			margin: 0 0 10px 0;
+			@include font('Montserrat', 20px, 600, $accent-blue);
 
 			.weather-brief-description {
 				@include font('Montserrat', 18px, 400, $accent-blue);
 			}
 		}
 
-		.weather-data-fields {
-			gap: 10px;
-			@include flex(start, start, column);
+		.field {
+			width: 240px;
+			border-bottom: 1px solid transparent;
+			transition: border 0.3s ease-in;
+			@include font('Inter', 18px, 400, $text-dark);
+			@include flex(space-between, center, '');
 
-			.field {
-				width: 240px;
-				border-bottom: 1px solid transparent;
-				transition: border 0.3s ease-in;
-				@include font('Inter', 20px, 400, $text-dark);
-				@include flex(space-between, center, '');
-
-				.field-indicators {
-					@include font('Inter', 20px, 600, $accent-blue);
-				}
-			}
-
-			.field.error-border {
-				border-bottom: 1px solid rgba(216, 74, 58, 0.6);
-			}
-
-			.field.field-border-active {
-				border-bottom: 1px solid rgba(119, 119, 119, 0.1);
+			.field-indicators {
+				@include font('Inter', 18px, 600, $accent-blue);
 			}
 		}
-	}
 
+		.field.error-border {
+			border-bottom: 1px solid rgba(216, 74, 58, 0.6);
+		}
+
+		.field.field-border-active {
+			border-bottom: 1px solid rgba(119, 119, 119, 0.1);
+		}
+	}
 
 }

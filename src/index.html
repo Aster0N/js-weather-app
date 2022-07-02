@@ -15,45 +15,6 @@
 	</header>
 
 	<main>
-		<div class="preview">
-			<span class="preview-title">Just 2 buttons</span>
-			<div class="preview-content">
-				<div class="preview-buttons">
-					<div class="preview-button preview-input">Enter the city name</div>
-					<div class="preview-button preview-show">show</div>
-				</div>
-				<div class="preview-output">
-					<div class="preview-city-header">
-						Toronto
-					</div>
-					<div class="preview-city-info">
-						<div class="city-info-list">
-							<div class="city-info-item">temperature</div>
-							<span class="city-info-item">9°C</span>
-							<div class="city-info-item">how it feels</div>
-							<span class="city-info-item">6°C</span>
-							<div class="city-info-item">max temp</div>
-							<span class="city-info-item">10°C</span>
-							<div class="city-info-item">min temp</div>
-							<span class="city-info-item">8°C</span>
-							<div class="city-info-item">clouds</div>
-							<span class="city-info-item">100</span>
-						</div>
-					</div>
-					<div class="preview-illustration">
-						<img src="./assets/img/umbrella.svg" alt="umbrella image" />
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="scroll-down-wrapper">
-			<div class="scroll-down-btn" id="scrollDownBtn">
-				<div class="scroll-down-arrow"></div>
-			</div>
-			<div class="line"></div>
-		</div>
-
 		<div class="container">
 			<div class="weather-output-wrapper">
 				<div class="user-input">
@@ -64,56 +25,66 @@
 				<div class="weather-data">
 					<div class="city">
 						<span class="city-name" id="cityName"></span><br>
-						<span class="weather-brief-description" id="weatherBriefDescription"></span>
 					</div>
-					<div class="weather-data-fields">
-						<div class="field">
-							temp
-							<div class="indicators">
-								<span class="field-indicators" id="tempField"></span>
-								<span class="measurement-temp"></span>
+					<div class="weather-data-fields data-fields-closed">
+						<div class="weather-data-today">
+							<div class="weather-day-title">
+								<span>Today</span><br>
+								<span class="weather-brief-description" id="weatherBriefDescription"></span>
+							</div>
+							<div class="field">
+								temp
+								<div class="indicators">
+									<span class="field-indicators" id="tempField"></span>
+									<span class="measurement-temp"></span>
+								</div>
+							</div>
+							<div class="field">
+								feels like
+								<div class="indicators">
+									<span class="field-indicators" id="feelsLike"></span>
+									<span class="measurement-temp"></span>
+								</div>
+							</div>
+							<div class="field">
+								max tem
+								<div class="indicators">
+									<span class="field-indicators" id="maxTemp"></span>
+									<span class="measurement-temp"></span>
+								</div>
+							</div>
+							<div class="field">
+								min temp
+								<div class="indicators">
+									<span class="field-indicators" id="minTemp"></span>
+									<span class="measurement-temp"></span>
+								</div>
+							</div>
+							<div class="field">
+								clouds
+								<div class="indicators">
+									<span class="field-indicators" id="clouds"></span>
+									<span class="measurement-percent"></span>
+								</div>
+							</div>
+							<div class="field">
+								wind
+								<div class="indicators">
+									<span class="field-indicators" id="wind"></span>
+									<span class="measurement-wind"></span>
+								</div>
+							</div>
+							<div class="field">
+								humidity
+								<div class="indicators">
+									<span class="field-indicators" id="humidity"></span>
+									<span class="measurement-percent"></span>
+								</div>
 							</div>
 						</div>
-						<div class="field">
-							feels like
-							<div class="indicators">
-								<span class="field-indicators" id="feelsLike"></span>
-								<span class="measurement-temp"></span>
-							</div>
-						</div>
-						<div class="field">
-							max tem
-							<div class="indicators">
-								<span class="field-indicators" id="maxTemp"></span>
-								<span class="measurement-temp"></span>
-							</div>
-						</div>
-						<div class="field">
-							min temp
-							<div class="indicators">
-								<span class="field-indicators" id="minTemp"></span>
-								<span class="measurement-temp"></span>
-							</div>
-						</div>
-						<div class="field">
-							clouds
-							<div class="indicators">
-								<span class="field-indicators" id="clouds"></span>
-								<span class="measurement-percent"></span>
-							</div>
-						</div>
-						<div class="field">
-							wind
-							<div class="indicators">
-								<span class="field-indicators" id="wind"></span>
-								<span class="measurement-wind"></span>
-							</div>
-						</div>
-						<div class="field">
-							humidity
-							<div class="indicators">
-								<span class="field-indicators" id="humidity"></span>
-								<span class="measurement-percent"></span>
+						<div class="weather-data-hourly">
+							<div class="weather-day-title">
+								<span>Hourly</span>
 							</div>
 						</div>
 					</div>
