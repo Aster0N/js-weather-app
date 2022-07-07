@@ -48,6 +48,20 @@ function fillCurrentWeatherFields(data) {
 	windMeasurementFields.innerHTML = 'm/s'
 }
 
+function fillHourlyWeatherData(data) {
+	const currentDate = document.querySelector("#currentDate")
+
+	let date = new Date()
+	let currentMonth = (date.getMonth() + 1).toString().length > 1 ? date.getMonth() + 1 : '0' + (date.getMonth() + 1).toString()
+	let currentDay = date.getDate().toString().length > 1 ? date.getDate() : '0' + date.getDate().toString()
+	let weekday = date.toLocaleString(
+		'en-US', { weekday: 'long' }
+	);
+	let todayDate = `${weekday} ${date.getFullYear()}-${currentMonth}-${currentDay}`
+
+	currentDate.innerHTML = todayDate
+}
+
 async function getData(url) {
 	const response = await fetch(url)
 	if (response.ok) {
@@ -92,6 +106,8 @@ showWeatherBtn.addEventListener('click', () => {
 
 		getData(hourlyWeatherURL)
 			.then(data => {
+				errorField.classList.remove('error-field-active')
+				fillHourlyWeatherData(data)
 				console.log('hourly data')
 				console.log(data)
 			})
