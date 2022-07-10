@@ -82,9 +82,9 @@ async function getData(url) {
 
 showWeatherBtn.addEventListener('click', () => {
 	if (userCityInput.value) {
-		let currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${userCityInput.value}&appid=${API_KEY}&units=metric`
+		let CURRENT_WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?q=${userCityInput.value}&appid=${API_KEY}&units=metric`
 
-		getData(currentWeatherURL)
+		getData(CURRENT_WEATHER_URL)
 			.then(data => {
 				weatherFields.forEach(field => {
 					field.classList.add('field-border-active')
@@ -104,9 +104,9 @@ showWeatherBtn.addEventListener('click', () => {
 				console.error(error)
 			})
 
-		let hourlyWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${userCityInput.value}&appid=${API_KEY}&units=metric`
+		let HOURLY_WEATHER_ULR = `https://api.openweathermap.org/data/2.5/forecast?q=${userCityInput.value}&appid=${API_KEY}&units=metric`
 
-		getData(hourlyWeatherURL)
+		getData(HOURLY_WEATHER_ULR)
 			.then(data => {
 				errorField.classList.remove('error-field-active')
 				fillHourlyWeatherData(data)
