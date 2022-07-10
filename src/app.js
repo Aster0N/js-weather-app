@@ -1,3 +1,5 @@
+import API_KEY from './apiKey.js'
+
 const userCityInput = document.querySelector('#userInput')
 const cityField = document.querySelector('#cityName')
 const weatherBriefDescription = document.querySelector('#weatherBriefDescription')
@@ -80,7 +82,7 @@ async function getData(url) {
 
 showWeatherBtn.addEventListener('click', () => {
 	if (userCityInput.value) {
-		let currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404&units=metric'
+		let currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${userCityInput.value}&appid=${API_KEY}&units=metric`
 
 		getData(currentWeatherURL)
 			.then(data => {
@@ -102,7 +104,7 @@ showWeatherBtn.addEventListener('click', () => {
 				console.error(error)
 			})
 
-		let hourlyWeatherURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + userCityInput.value + '&appid=0b0e367f470fb02507e7aa3e527cb404&units=metric'
+		let hourlyWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${userCityInput.value}&appid=${API_KEY}&units=metric`
 
 		getData(hourlyWeatherURL)
 			.then(data => {
