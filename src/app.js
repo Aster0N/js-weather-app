@@ -20,6 +20,10 @@ const tempMeasurementFields = document.querySelectorAll('.measurement-temp')
 const percentMeasurementFields = document.querySelectorAll('.measurement-percent')
 const windMeasurementFields = document.querySelector('.measurement-wind')
 
+function getOnlyTodayHours(array, compareTime) {
+	return array.filter(item => item.dt_txt.split(" ")[0] === compareTime.split(" ").at(-1))
+}
+
 function fillCurrentWeatherFields(data) {
 	const description = data['weather'][0]['description']
 	const temp = data['main']['temp']
@@ -62,6 +66,8 @@ function fillHourlyWeatherData(data) {
 	let todayDate = `${weekday} ${date.getFullYear()}-${currentMonth}-${currentDay}`
 
 	currentDate.innerHTML = todayDate
+
+	const remainingHours = getOnlyTodayHours(data.list, todayDate)
 }
 
 async function getData(url) {
