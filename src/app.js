@@ -18,7 +18,7 @@ const fieldsWrapper = document.querySelector(".weather-data-fields")
 
 const tempMeasurementFields = document.querySelectorAll('.measurement-temp')
 const percentMeasurementFields = document.querySelectorAll('.measurement-percent')
-const windMeasurementFields = document.querySelector('.measurement-wind')
+const windMeasurementFields = document.querySelectorAll('.measurement-wind')
 
 function getOnlyTodayHours(array, compareTime) {
 	return array.filter(item => item.dt_txt.split(" ")[0] === compareTime.split(" ").at(-1))
@@ -51,7 +51,9 @@ function fillCurrentWeatherFields(data) {
 	percentMeasurementFields.forEach(field => {
 		field.innerHTML = '%'
 	})
-	windMeasurementFields.innerHTML = 'm/s'
+	windMeasurementFields.forEach(field => {
+		field.innerHTML = 'm/s'
+	})
 }
 
 function fillHourlyWeatherData(data) {
