@@ -195,4 +195,38 @@ header .title::after {
 }
 .weather-output-wrapper .weather-data .field.field-border-active {
   border-bottom: 1px solid rgba(119, 119, 119, 0.1);
+}
+.weather-output-wrapper .weather-data .weather-hourly-fields {
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 400;
+  color: #444444;
+}
+.weather-output-wrapper .weather-data .weather-hourly-fields .hourly-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: "";
+}
+.weather-output-wrapper .weather-data .weather-hourly-fields .hourly-header .hourly-field {
+  width: 120px;
+  padding: 5px 10px 5px 0;
+}
+.weather-output-wrapper .weather-data .weather-hourly-fields .hourly-header .hourly-field .measurement-temp,
+.weather-output-wrapper .weather-data .weather-hourly-fields .hourly-header .hourly-field .measurement-percent,
+.weather-output-wrapper .weather-data .weather-hourly-fields .hourly-header .hourly-field .measurement-wind {
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 600;
+  color: #1A68B0;
+}
+.weather-output-wrapper .weather-data .weather-hourly-fields .hourly-body .hourly-table-row {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: "";
+}
+.weather-output-wrapper .weather-data .weather-hourly-fields .hourly-body .hourly-table-row .hourly-row-indicator {
+  width: 120px;
+  padding: 5px 10px 5px 0;
 }/*# sourceMappingURL=style.css.map */

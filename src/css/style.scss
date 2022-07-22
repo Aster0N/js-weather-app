@@ -170,6 +170,36 @@ header {
 		.field.field-border-active {
 			border-bottom: 1px solid rgba(119, 119, 119, 0.1);
 		}
+
+		.weather-hourly-fields {
+			@include font('Inter', 18px, 400, $text-dark);
+
+			.hourly-header {
+				@include flex(center, center, '');
+
+				.hourly-field {
+					width: 120px;
+					padding: 5px 10px 5px 0;
+
+					.measurement-temp,
+					.measurement-percent,
+					.measurement-wind {
+						@include font('Inter', 18px, 600, $accent-blue);
+					}
+				}
+			}
+
+			.hourly-body {
+				.hourly-table-row {
+					@include flex(start, center, '');
+
+					.hourly-row-indicator {
+						width: 120px;
+						padding: 5px 10px 5px 0;
+					}
+				}
+			}
+		}
 	}
 
 }
