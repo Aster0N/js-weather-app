@@ -56,20 +56,35 @@ function fillCurrentWeatherFields(data) {
 	})
 }
 
-function fillHourlyWeatherData(data) {
-	const currentDate = document.querySelector("#currentDate")
-
-	let date = new Date()
-	let currentMonth = (date.getMonth() + 1).toString().length > 1 ? date.getMonth() + 1 : '0' + (date.getMonth() + 1).toString()
-	let currentDay = date.getDate().toString().length > 1 ? date.getDate() : '0' + date.getDate().toString()
-	let weekday = date.toLocaleString(
+function formatDate(date) {
+	const month = (date.getMonth() + 1).toString().length > 1 ? date.getMonth() + 1 : '0' + (date.getMonth() + 1).toString()
+	const day = date.getDate().toString().length > 1 ? date.getDate() : '0' + date.getDate().toString()
+	const weekday = date.toLocaleString(
 		'en-US', { weekday: 'long' }
 	);
-	let todayDate = `${weekday} ${date.getFullYear()}-${currentMonth}-${currentDay}`
 
-	currentDate.innerHTML = todayDate
+	return `${weekday} ${date.getFullYear()}-${month}-${day}`
+}
 
-	const remainingHours = getOnlyTodayHours(data.list, todayDate)
+function fillHourlyWeatherData(data) {
+	const currentDate = document.querySelector("#currentDate")
+	const hourlyWeatherContainer = document.querySelector("#hourlyBody")
+
+	let date = new Date()
+	let requestedCityTimezone = data.city.timezone
+	let localUTCOffset = date.getTimezoneOffset() / 60
+	let requestedCityUTCOffset = requestedCityTimezone / 60 / 60
+	let resultOffset = localUTCOffset + requestedCityUTCOffset
+
+	let localCityDate = date
+	let requestedCityDate = new Date(new Date().getTime() + resultOffset * 60 * 60 * 1000)
+	const localDate = formatDate(localCityDate)
+	const requestedDate = formatDate(requestedCityDate)
+
+	currentDate.innerHTML = localDate
+
+	const remainingHours = getOnlyTodayHours(data.list, requestedDate)
+
 }
 
 async function getData(url) {
