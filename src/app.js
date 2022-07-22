@@ -56,6 +56,20 @@ function fillCurrentWeatherFields(data) {
 	})
 }
 
+function generateHourlyHTMLRow(array, currentIndex) {
+	const temp = array[currentIndex]['main']['temp']
+	const clouds = array[currentIndex]['clouds']['all']
+	const wind = array[currentIndex]['wind']['speed']
+	const humidity = array[currentIndex]['main']['humidity']
+
+	return `
+		<div class="hourly-row-indicator">${temp}</div>
+		<div class="hourly-row-indicator">${clouds}</div>
+		<div class="hourly-row-indicator">${wind}</div>
+		<div class="hourly-row-indicator">${humidity}</div>
+	`
+}
+
 function formatDate(date) {
 	const month = (date.getMonth() + 1).toString().length > 1 ? date.getMonth() + 1 : '0' + (date.getMonth() + 1).toString()
 	const day = date.getDate().toString().length > 1 ? date.getDate() : '0' + date.getDate().toString()
@@ -69,6 +83,7 @@ function formatDate(date) {
 function fillHourlyWeatherData(data) {
 	const currentDate = document.querySelector("#currentDate")
 	const hourlyWeatherContainer = document.querySelector("#hourlyBody")
+	hourlyWeatherContainer.innerHTML = ''
 
 	let date = new Date()
 	let requestedCityTimezone = data.city.timezone
@@ -85,6 +100,12 @@ function fillHourlyWeatherData(data) {
 
 	const remainingHours = getOnlyTodayHours(data.list, requestedDate)
 
+	for (let rowInd = 0; rowInd < remainingHours.length; rowInd++) {
+		let houlryWeatherRow = document.createElement("div")
+		houlryWeatherRow.classList.add("hourly-table-row")
+		houlryWeatherRow.innerHTML = generateHourlyHTMLRow(remainingHours, rowInd)
+		hourlyWeatherContainer.appendChild(houlryWeatherRow)
+	}
 }
 
 async function getData(url) {
