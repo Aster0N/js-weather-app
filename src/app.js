@@ -26,12 +26,12 @@ function getOnlyTodayHours(array, compareTime) {
 
 function fillCurrentWeatherFields(data) {
 	const description = data['weather'][0]['description']
-	const temp = data['main']['temp']
-	const tempFeeling = data['main']['feels_like']
-	const maxTemp = data['main']['temp_max']
-	const minTemp = data['main']['temp_min']
+	const temp = data['main']['temp'].toFixed(1)
+	const tempFeeling = data['main']['feels_like'].toFixed(1)
+	const maxTemp = data['main']['temp_max'].toFixed(1)
+	const minTemp = data['main']['temp_min'].toFixed(1)
 	const clouds = data['clouds']['all']
-	const wind = data['wind']['speed']
+	const wind = data['wind']['speed'].toFixed(1)
 	const humidity = data['main']['humidity']
 
 	tempField.innerHTML = temp
@@ -57,12 +57,14 @@ function fillCurrentWeatherFields(data) {
 }
 
 function generateHourlyHTMLRow(array, currentIndex) {
-	const temp = array[currentIndex]['main']['temp']
+	const temp = array[currentIndex]['main']['temp'].toFixed(1)
 	const clouds = array[currentIndex]['clouds']['all']
-	const wind = array[currentIndex]['wind']['speed']
+	const wind = array[currentIndex]['wind']['speed'].toFixed(1)
 	const humidity = array[currentIndex]['main']['humidity']
+	const time = array[currentIndex]['dt_txt'].split(' ').at(-1).split(':')
 
 	return `
+		<div class="hourly-row-time">${time[0]}:${time[1]}</div>
 		<div class="hourly-row-indicator">${temp}</div>
 		<div class="hourly-row-indicator">${clouds}</div>
 		<div class="hourly-row-indicator">${wind}</div>

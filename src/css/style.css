@@ -226,6 +226,7 @@ header .title::after {
   align-items: center;
   flex-direction: "";
 }
+.weather-output-wrapper .weather-data .weather-hourly-fields .hourly-body .hourly-table-row .hourly-row-time,
 .weather-output-wrapper .weather-data .weather-hourly-fields .hourly-body .hourly-table-row .hourly-row-indicator {
   width: 120px;
   padding: 5px 10px 5px 0;

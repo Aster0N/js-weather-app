@@ -193,6 +193,7 @@ header {
 				.hourly-table-row {
 					@include flex(start, center, '');
 
+					.hourly-row-time,
 					.hourly-row-indicator {
 						width: 120px;
 						padding: 5px 10px 5px 0;
