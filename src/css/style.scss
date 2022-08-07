@@ -175,6 +175,7 @@ header {
 			@include font('Inter', 18px, 400, $text-dark);
 
 			.hourly-header {
+				border-bottom: 1px solid rgba(119, 119, 119, 0.1);
 				@include flex(center, center, '');
 
 				.hourly-field {
@@ -191,6 +192,7 @@ header {
 
 			.hourly-body {
 				.hourly-table-row {
+					border-bottom: 1px solid rgba(119, 119, 119, 0.1);
 					@include flex(start, center, '');
 
 					.hourly-row-time,

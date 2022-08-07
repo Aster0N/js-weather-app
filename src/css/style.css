@@ -203,6 +203,7 @@ header .title::after {
   color: #444444;
 }
 .weather-output-wrapper .weather-data .weather-hourly-fields .hourly-header {
+  border-bottom: 1px solid rgba(119, 119, 119, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -221,6 +222,7 @@ header .title::after {
   color: #1A68B0;
 }
 .weather-output-wrapper .weather-data .weather-hourly-fields .hourly-body .hourly-table-row {
+  border-bottom: 1px solid rgba(119, 119, 119, 0.1);
   display: flex;
   justify-content: start;
   align-items: center;
