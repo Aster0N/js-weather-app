@@ -150,10 +150,15 @@ header .title::after {
 }
 .weather-output-wrapper .weather-data .weather-day-title {
   margin: 0 0 20px 0;
+  gap: 20px;
   font-family: "Montserrat";
   font-size: 20px;
   font-weight: 600;
   color: #1A68B0;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: "";
 }
 .weather-output-wrapper .weather-data .weather-day-title .weather-brief-description {
   font-family: "Montserrat";
