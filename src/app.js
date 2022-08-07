@@ -144,7 +144,6 @@ showWeatherBtn.addEventListener('click', () => {
 
 				document.querySelector('.city').style.margin = '30px 0 20px 50px'
 				fillCurrentWeatherFields(data)
-				console.log(data)
 			})
 			.catch(error => {
 				console.error(error)
@@ -156,8 +155,6 @@ showWeatherBtn.addEventListener('click', () => {
 			.then(data => {
 				errorField.classList.remove('error-field-active')
 				fillHourlyWeatherData(data)
-				console.log('hourly data')
-				console.log(data)
 			})
 			.catch(error => {
 				console.error(error)
