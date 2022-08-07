@@ -54,6 +54,11 @@ function fillCurrentWeatherFields(data) {
 	windMeasurementFields.forEach(field => {
 		field.innerHTML = 'm/s'
 	})
+
+	const todayWeatherIcon = document.querySelector('.today-weather-icon')
+	let iconId = data['weather'][0]['icon'].slice(0, 2)
+	todayWeatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${iconId}d.png`)
+	todayWeatherIcon.setAttribute("alt", data['weather'][0]['description'])
 }
 
 function generateHourlyHTMLRow(array, currentIndex) {
