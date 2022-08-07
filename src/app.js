@@ -64,11 +64,22 @@ function generateHourlyHTMLRow(array, currentIndex) {
 	const time = array[currentIndex]['dt_txt'].split(' ').at(-1).split(':')
 
 	return `
-		<div class="hourly-row-time">${time[0]}:${time[1]}</div>
-		<div class="hourly-row-indicator">${temp}</div>
-		<div class="hourly-row-indicator">${clouds}</div>
-		<div class="hourly-row-indicator">${wind}</div>
-		<div class="hourly-row-indicator">${humidity}</div>
+		<div class="hourly-row-time">
+			${time[0]}:${time[1]}
+			<img class="hourly-row-icon">
+		</div>
+		<div class="hourly-row-indicator">
+			${temp}
+		</div>
+		<div class="hourly-row-indicator">
+			${clouds}
+		</div>
+		<div class="hourly-row-indicator">
+			${wind}
+		</div>
+		<div class="hourly-row-indicator">
+			${humidity}
+		</div>
 	`
 }
 
@@ -100,7 +111,7 @@ function fillHourlyWeatherData(data) {
 
 	currentDate.innerHTML = localDate
 
-	const remainingHours = getOnlyTodayHours(data.list, requestedDate)
+	let remainingHours = getOnlyTodayHours(data.list, requestedDate)
 
 	for (let rowInd = 0; rowInd < remainingHours.length; rowInd++) {
 		let houlryWeatherRow = document.createElement("div")
@@ -108,6 +119,13 @@ function fillHourlyWeatherData(data) {
 		houlryWeatherRow.innerHTML = generateHourlyHTMLRow(remainingHours, rowInd)
 		hourlyWeatherContainer.appendChild(houlryWeatherRow)
 	}
+
+	const hourlyIcons = document.querySelectorAll(".hourly-row-icon")
+	hourlyIcons.forEach((el, ind) => {
+		let iconId = remainingHours[ind]['weather'][0]['icon'].slice(0, 2)
+		el.setAttribute("src", `https://openweathermap.org/img/wn/${iconId}d.png`)
+		el.setAttribute("alt", remainingHours[ind]['weather'][0]['description'])
+	})
 }
 
 async function getData(url) {
@@ -128,7 +146,7 @@ async function getData(url) {
 
 showWeatherBtn.addEventListener('click', () => {
 	if (userCityInput.value) {
-		let CURRENT_WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?q=${userCityInput.value}&appid=${API_KEY}&units=metric`
+		const CURRENT_WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?q=${userCityInput.value}&appid=${API_KEY}&units=metric`
 
 		getData(CURRENT_WEATHER_URL)
 			.then(data => {
@@ -149,7 +167,7 @@ showWeatherBtn.addEventListener('click', () => {
 				console.error(error)
 			})
 
-		let HOURLY_WEATHER_ULR = `https://api.openweathermap.org/data/2.5/forecast?q=${userCityInput.value}&appid=${API_KEY}&units=metric`
+		const HOURLY_WEATHER_ULR = `https://api.openweathermap.org/data/2.5/forecast?q=${userCityInput.value}&appid=${API_KEY}&units=metric`
 
 		getData(HOURLY_WEATHER_ULR)
 			.then(data => {
