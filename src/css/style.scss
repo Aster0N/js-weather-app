@@ -201,6 +201,11 @@ header {
 						padding: 5px 10px 5px 0;
 					}
 
+					.hourly-row-time {
+						padding-right: 20px;
+						@include flex(center, center, '');
+					}
+
 					.hourly-row-indicator {
 						@include font('Inter', 18px, 600, $accent-blue);
 					}
