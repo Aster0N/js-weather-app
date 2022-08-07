@@ -230,4 +230,10 @@ header .title::after {
 .weather-output-wrapper .weather-data .weather-hourly-fields .hourly-body .hourly-table-row .hourly-row-indicator {
   width: 120px;
   padding: 5px 10px 5px 0;
+}
+.weather-output-wrapper .weather-data .weather-hourly-fields .hourly-body .hourly-table-row .hourly-row-indicator {
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 600;
+  color: #1A68B0;
 }/*# sourceMappingURL=style.css.map */
