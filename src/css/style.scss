@@ -30,7 +30,8 @@ header {
 
 	.user-input {
 		column-gap: 30px;
-		@include flex(start, center, '');
+		row-gap: 10px;
+		@include flex(start, start, column);
 
 		.input-field,
 		.show-weather-btn {
@@ -65,6 +66,7 @@ header {
 		}
 
 		.user-input-error {
+			display: none;
 			height: 50px;
 			visibility: hidden;
 			opacity: 0;
@@ -78,6 +80,7 @@ header {
 		}
 
 		.user-input-error.error-field-active {
+			display: block;
 			visibility: visible;
 			opacity: 1;
 			transform: translateY(0);
