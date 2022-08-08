@@ -28,12 +28,20 @@
 	.container {
 		width: 540px;
 	}
+
+	.show-weather-btn {
+		padding: 0 20px;
+	}
 }
 
 @media screen and (max-width: 540px) {
 	.container {
 		padding: 10px;
 		width: 100%;
+	}
+
+	.weather-output-wrapper {
+		padding: 50px 30px;
 	}
 }
 
