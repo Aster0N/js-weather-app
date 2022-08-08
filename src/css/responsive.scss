@@ -32,6 +32,17 @@
 	.show-weather-btn {
 		padding: 0 20px;
 	}
+
+	.user-input-buttons {
+		column-gap: 10px;
+		@include flex(center, center, '');
+	}
+}
+
+@media screen and (min-width: 540px) {
+	.weather-data-fields.data-fields-closed {
+		border-top: 2px solid rgba($text-dark, 0.6);
+	}
 }
 
 @media screen and (max-width: 540px) {
@@ -42,6 +53,10 @@
 
 	.weather-output-wrapper {
 		padding: 50px 30px;
+	}
+
+	.weather-data-fields.data-fields-closed {
+		border: none;
 	}
 }
 
