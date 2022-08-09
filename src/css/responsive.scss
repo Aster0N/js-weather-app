@@ -42,6 +42,7 @@
 	.weather-data-fields,
 	.weather-data-fields.data-fields-opened {
 		padding: 30px 50px;
+		border: 2px solid rgba($text-dark, 0.1);
 	}
 }
 
@@ -60,12 +61,13 @@
 	}
 
 	.weather-output-wrapper {
-		padding: 70px 0 0 0;
+		padding: 70px 0;
 	}
 
 	.weather-data-fields,
 	.weather-data-fields.data-fields-opened {
 		padding: 0;
+		border: none;
 	}
 }
 
@@ -94,10 +96,6 @@
 	.container {
 		padding: 10px;
 		width: 100%;
-	}
-
-	.weather-data-fields.data-fields-closed {
-		border: none;
 	}
 }
 

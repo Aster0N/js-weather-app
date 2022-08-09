@@ -101,10 +101,6 @@ header {
 			overflow: hidden;
 		}
 
-		.weather-data-fields.data-fields-opened {
-			border: 2px solid rgba($text-dark, 0.1);
-		}
-
 		.weather-data-fields,
 		.weather-data-fields.data-fields-opened {
 			@include flex(start, start, '');
