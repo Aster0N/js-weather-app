@@ -107,8 +107,6 @@ header {
 
 		.weather-data-fields,
 		.weather-data-fields.data-fields-opened {
-			padding: 30px 50px;
-			gap: 100px;
 			@include flex(start, start, '');
 
 			.weather-data-today,
