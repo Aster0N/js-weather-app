@@ -155,11 +155,10 @@ header {
 
 			.hourly-header {
 				border-bottom: 1px solid rgba(119, 119, 119, 0.1);
-				@include flex(center, center, '');
+				@include flex(start, center, '');
 
 				.hourly-field {
-					width: 120px;
-					padding: 5px 10px 5px 0;
+					padding: 0 0 5px 0;
 
 					.measurement-temp,
 					.measurement-percent,

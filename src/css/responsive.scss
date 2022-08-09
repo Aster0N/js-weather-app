@@ -71,6 +71,12 @@
 	}
 }
 
+@media screen and (min-width: 768px) {
+	.hourly-field {
+		width: 120px;
+	}
+}
+
 @media screen and (max-width: 768px) {
 	.container {
 		width: 540px;
@@ -83,6 +89,24 @@
 	.user-input-buttons {
 		column-gap: 10px;
 		@include flex(center, center, '');
+	}
+
+	.hourly-field {
+		padding: 0 0 5px 0;
+	}
+
+	.hourly-field.hourly-field-empty {
+		width: 120px;
+	}
+
+	.hourly-field,
+	.hourly-row-indicators {
+		width: 80px;
+	}
+
+	.weather-data-fields.data-fields-opened {
+		font-size: 18px;
+		color: red;
 	}
 }
 
