@@ -72,7 +72,9 @@
 }
 
 @media screen and (min-width: 768px) {
-	.hourly-field {
+
+	.hourly-field,
+	.hourly-row-indicator {
 		width: 120px;
 	}
 }
@@ -100,8 +102,8 @@
 	}
 
 	.hourly-field,
-	.hourly-row-indicators {
-		width: 80px;
+	.hourly-row-indicator {
+		width: 100px;
 	}
 
 	.weather-data-fields.data-fields-opened {
