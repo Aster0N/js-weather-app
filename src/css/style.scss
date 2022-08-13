@@ -172,16 +172,6 @@ header {
 					border-bottom: 1px solid rgba(119, 119, 119, 0.1);
 					@include flex(start, center, '');
 
-					.hourly-row-time,
-					.hourly-row-indicator {
-						padding: 5px 10px 5px 0;
-					}
-
-					.hourly-row-time {
-						padding-right: 20px;
-						@include flex(center, center, '');
-					}
-
 					.hourly-row-indicator {
 						@include font('Inter', 18px, 600, $accent-blue);
 					}

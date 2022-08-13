@@ -111,12 +111,32 @@
 	.weather-data-fields.data-fields-closed {
 		border-top: 2px solid rgba($text-dark, 0.6);
 	}
+
+	.hourly-row-indicator {
+		padding: 5px 10px 5px 0;
+	}
 }
 
 @media screen and (max-width: 540px) {
 	.container {
 		padding: 10px;
 		width: 100%;
+	}
+
+	.hourly-field,
+	.hourly-row-indicator {
+		width: 70px;
+	}
+
+	.hourly-row-indicator {
+		padding: 0;
+	}
+}
+
+@media screen and (min-width: 450px) {
+	.hourly-row-time {
+		padding: 5px 20px 5px 0;
+		@include flex(center, center, '');
 	}
 }
 
@@ -125,6 +145,17 @@
 		gap: 10px;
 		@include flex(center, start, column);
 	}
+
+	.hourly-field.hourly-field-empty {
+		width: 70px;
+	}
+
+	.hourly-row-time {
+		padding: 5px 20px 5px 0;
+		@include flex(center, center, column);
+	}
+
+	.hourly-field {}
 }
 
 @media screen and (max-width: 360px) {
