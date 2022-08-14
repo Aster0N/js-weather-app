@@ -65,11 +65,7 @@ header {
 
 		.user-input-error {
 			display: none;
-			height: 50px;
 			visibility: hidden;
-			opacity: 0;
-			transform: translateY(-10px);
-			transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 			user-select: none;
 			padding: 15px;
 			border: 1px solid rgba(231, 77, 60, 0.9);
@@ -80,8 +76,6 @@ header {
 		.user-input-error.error-field-active {
 			display: block;
 			visibility: visible;
-			opacity: 1;
-			transform: translateY(0);
 		}
 	}
 
