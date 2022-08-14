@@ -20,6 +20,13 @@ const tempMeasurementFields = document.querySelectorAll('.measurement-temp')
 const percentMeasurementFields = document.querySelectorAll('.measurement-percent')
 const windMeasurementFields = document.querySelectorAll('.measurement-wind')
 
+const goToImagesTranscriptionBtn = document.querySelector('#go-to-img-transcription')
+const hourlyImagesTranscript = document.querySelector('.hourly-images-transcript')
+
+goToImagesTranscriptionBtn.addEventListener('click', () => {
+	hourlyImagesTranscript.scrollIntoView({ block: "center", behavior: "smooth" })
+})
+
 function getOnlyTodayHours(array, compareTime) {
 	return array.filter(item => item.dt_txt.split(" ")[0] === compareTime.split(" ").at(-1))
 }
