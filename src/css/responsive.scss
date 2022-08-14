@@ -138,6 +138,14 @@
 		padding: 5px 20px 5px 0;
 		@include flex(center, center, '');
 	}
+
+	.city.city-margin-on {
+		margin: 30px 0 30px 50px;
+	}
+
+	.user-input {
+		@include flex(start, start, column);
+	}
 }
 
 @media screen and (max-width: 450px) {
@@ -152,6 +160,15 @@
 
 	.hourly-row-time {
 		padding: 5px 20px 5px 0;
+		@include flex(center, center, column);
+	}
+
+	.city.city-margin-on {
+		text-align: center;
+		margin: 30px 0;
+	}
+
+	.user-input {
 		@include flex(center, center, column);
 	}
 }

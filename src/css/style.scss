@@ -30,7 +30,6 @@ header {
 	.user-input {
 		column-gap: 30px;
 		row-gap: 10px;
-		@include flex(start, start, column);
 
 		.input-field,
 		.show-weather-btn {

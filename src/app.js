@@ -172,7 +172,7 @@ showWeatherBtn.addEventListener('click', () => {
 					fieldsWrapper.classList.add("data-fields-opened")
 				}
 
-				document.querySelector('.city').style.margin = '30px 0 20px 50px'
+				document.querySelector('.city').classList.add('city-margin-on')
 				fillCurrentWeatherFields(data)
 			})
 			.catch(error => {
