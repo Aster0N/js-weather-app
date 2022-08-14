@@ -154,12 +154,55 @@
 		padding: 5px 20px 5px 0;
 		@include flex(center, center, column);
 	}
-
-	.hourly-field {}
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (min-width: 380px) {
+	.hourly-field-text {
+		display: block;
+		visibility: visible;
+	}
+
+	.hourly-field-img {
+		display: none;
+		visibility: hidden;
+	}
+
+	.weather-data-hourly .weather-day-title {
+		gap: 20px;
+		@include flex(center, start, '');
+	}
+}
+
+@media screen and (max-width: 380px) {
 	header {
 		padding: 10px;
+	}
+
+	.hourly-field-text {
+		display: none;
+		visibility: hidden;
+	}
+
+	.hourly-field-img {
+		display: block;
+		visibility: visible;
+	}
+
+	.hourly-field,
+	.hourly-row-indicator {
+		width: 60px;
+	}
+
+	.weather-data-hourly .weather-day-title {
+		gap: 10px;
+		@include flex(center, start, column);
+	}
+}
+
+@media screen and (max-width: 320px) {
+
+	.hourly-field,
+	.hourly-row-indicator {
+		width: 55px;
 	}
 }
