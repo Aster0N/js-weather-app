@@ -171,6 +171,12 @@
 		gap: 20px;
 		@include flex(center, start, '');
 	}
+
+	.images-transcript-helper,
+	.hourly-images-transcript {
+		display: none;
+		visibility: hidden;
+	}
 }
 
 @media screen and (max-width: 380px) {
@@ -196,6 +202,24 @@
 	.weather-data-hourly .weather-day-title {
 		gap: 10px;
 		@include flex(center, start, column);
+	}
+
+	.images-transcript-helper {
+		display: block;
+		visibility: visible;
+		background-color: transparent;
+		outline: none;
+		border: none;
+	}
+
+	.hourly-images-transcript {
+		display: block;
+		visibility: visible;
+
+		.image-transcript {
+			gap: 30px;
+			@include flex(space-between, center, '');
+		}
 	}
 }
 
