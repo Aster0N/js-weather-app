@@ -7,17 +7,17 @@ jobs:
       matrix:
         os: [ubuntu-latest]
     env:
-      prepo: ${{github.repository}}
+      repository: ${{github.repository}}
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
     - name: Set up Minify Actions
       uses: amireshoon/minifyAction@main
       with:
-        repo: $prepo
+        repo: $repository
     - name: Minifying Codes
       run: |
-        minifier.sh $prepo
+        minifier.sh $repository
     - name: Pushing to production branch
       uses: actions-js/push@master
       with:
