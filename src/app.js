@@ -1,3 +1,4 @@
+console.log("hello")
 import API_KEY from './apiKey.js'
 
 const userCityInput = document.querySelector('#userInput')
