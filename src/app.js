@@ -100,7 +100,7 @@ function formatDate(date) {
 	const day = date.getDate().toString().length > 1 ? date.getDate() : '0' + date.getDate().toString()
 	const weekday = date.toLocaleString(
 		'en-US', { weekday: 'long' }
-	);
+	)
 
 	return `${weekday} ${date.getFullYear()}-${month}-${day}`
 }
